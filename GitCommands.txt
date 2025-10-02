@@ -1,0 +1,6 @@
+cd Desktop
+git init AdventureMark
+cd AdventureMark
+git config --global user.name "Mark Jurgen"
+git config --global user.email "markjurgennn@gmail.com"
+config --globaal --list
