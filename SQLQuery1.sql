@@ -16,7 +16,7 @@ RETURN
 
 select * from fn_ILTVF_GetEmployees();
 
-CREATE FUNCTION GetEmployees()
+CREATE FUNCTION fn_MSTVF_GetEmployees()
 RETURNS TABLE
 AS
 RETURN
@@ -29,4 +29,14 @@ RETURN
     FROM DimEmployee
 );
 
-select * from GetEmployees();
+select * from fn_MSTVF_GetEmployees();
+
+UPDATE fn_ILTVF_GetEmployees()
+SET FirstName = 'Sam2'
+WHERE FirstName = 'Rob';
+
+UPDATE fn_MSTVF_GetEmployees()
+SET FirstName = 'Sam1'
+WHERE FirstName = 'Guy';
+
+
