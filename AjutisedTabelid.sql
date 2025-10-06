@@ -16,4 +16,8 @@ END
 -- Käivita loodud protseduur
 EXEC spCreateLocalTempTable;
 
+-- Loodud globaalne ajutine tabel
+CREATE TABLE ##EmployeeDetails (Id INT, Name NVARCHAR(20))
+
+
 
