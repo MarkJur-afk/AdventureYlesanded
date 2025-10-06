@@ -19,5 +19,10 @@ EXEC spCreateLocalTempTable;
 -- Loodud globaalne ajutine tabel
 CREATE TABLE ##EmployeeDetails (Id INT, Name NVARCHAR(20))
 
+SELECT * FROM ##EmployeeDetails;
+
+-- Kustutatud globaalne ajutine tabel
+DROP TABLE ##EmployeeDetails;
+
 
 
