@@ -41,3 +41,19 @@ INSERT INTO tblEmployee VALUES (4,'Sara',5500,'Female','Tokyo');
 INSERT INTO tblEmployee VALUES (5,'Todd',3100,'Male','Toronto');
 INSERT INTO tblEmployee VALUES (2,'Pam',6500,'Female','Sydney');
 
+-- Eemaldab primaarvõtme piirangu, et saaks luua uue klastrindeksi
+ALTER TABLE tblEmployee DROP CONSTRAINT PK_tblEmployee;
+
+-- Loob klastrindeksi veergudele Gender ja Salary
+CREATE CLUSTERED INDEX IX_tblEmployee_Gender_Salary
+ON tblEmployee (Gender DESC, Salary ASC);
+
+-- Loob mitte-klastrindeksi veerule Name
+CREATE NONCLUSTERED INDEX IX_tblEmployee_Name
+ON tblEmployee(Name);
+
+-- Kuvab tabeli andmed sorteerituna Gender ja Salary järgi
+SELECT * FROM tblEmployee ORDER BY Gender DESC, Salary ASC;
+
+-- Otsib töötajaid, kelle palk on vahemikus 5000 kuni 7000
+SELECT * FROM tblEmployee WHERE Salary BETWEEN 5000 AND 7000;
