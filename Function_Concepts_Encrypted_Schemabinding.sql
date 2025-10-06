@@ -27,6 +27,7 @@ BEGIN
     RETURN @Name
 END
 
+DROP TABLE dbo.DimEmployee;
 
 
 
