@@ -13,4 +13,7 @@ BEGIN
     SELECT * FROM #PersonDetails
 END
 
+-- Käivita loodud protseduur
+EXEC spCreateLocalTempTable;
+
 
