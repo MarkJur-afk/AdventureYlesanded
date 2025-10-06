@@ -57,3 +57,17 @@ SELECT * FROM tblEmployee ORDER BY Gender DESC, Salary ASC;
 
 -- Otsib töötajaid, kelle palk on vahemikus 5000 kuni 7000
 SELECT * FROM tblEmployee WHERE Salary BETWEEN 5000 AND 7000;
+
+-- Loome klastreeritud indeksi veergudele Gender (langev) ja Salary (tõusev)
+CREATE CLUSTERED INDEX IX_DimEmployee_Gender_Salary
+ON dbo.DimEmployee (Gender DESC, Salary ASC);
+
+-- Loome mitte-klastreeritud indeksi veerule Name, et kiirendada otsingut nime järgi
+CREATE NONCLUSTERED INDEX IX_DimEmployee_Name
+ON dbo.DimEmployee(Name);
+
+-- Valime kõik kirjed tabelist DimEmployee, järjestades need Gender (langev) ja Salary (tõusev) järgi
+SELECT * FROM dbo.DimEmployee ORDER BY Gender DESC, Salary ASC;
+
+-- Valime töötajad, kelle palk jääb vahemikku 5000 kuni 7000
+SELECT * FROM dbo.DimEmployee WHERE Salary BETWEEN 5000 AND 7000;
