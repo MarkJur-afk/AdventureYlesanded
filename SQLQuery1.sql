@@ -40,3 +40,7 @@ SET FirstName = 'Sam1'
 WHERE FirstName = 'Guy';
 
 
+--select funktsioonid
+select * from fn_ILTVF_GetEmployees();
+select * from fn_MSTVF_GetEmployees();
+
