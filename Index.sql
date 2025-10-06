@@ -12,3 +12,7 @@ ON dbo.DimEmployee (Salary ASC);
 
 SELECT * FROM dbo.DimEmployee
 WHERE Salary > 5000 AND Salary < 7000;
+
+EXEC sp_helpindex 'dbo.DimEmployee';
+
+DROP INDEX dbo.DimEmployee.IX_DimEmployee_Salary;
