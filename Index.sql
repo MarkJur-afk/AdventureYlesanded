@@ -66,7 +66,7 @@ ON dbo.DimEmployee (Gender DESC, Salary ASC);
 CREATE NONCLUSTERED INDEX IX_DimEmployee_Name
 ON dbo.DimEmployee(Name);
 
--- Valime kõik kirjed tabelist DimEmployee, järjestades need Gender (langev) ja Salary (tõusev) järgi
+-- Valime kõik kirjed tabelist DimEmployee, järjestades need Gender (langev) ja Salary (tõusev) järg
 SELECT * FROM dbo.DimEmployee ORDER BY Gender DESC, Salary ASC;
 
 -- Valime töötajad, kelle palk jääb vahemikku 5000 kuni 7000
