@@ -6,3 +6,9 @@ SELECT EmployeeKey, FirstName, LastName, Salary FROM dbo.DimEmployee;
 
 SELECT * FROM dbo.DimEmployee
 WHERE Salary > 5000 AND Salary < 7000;
+
+CREATE INDEX IX_DimEmployee_Salary
+ON dbo.DimEmployee (Salary ASC);
+
+SELECT * FROM dbo.DimEmployee
+WHERE Salary > 5000 AND Salary < 7000;
