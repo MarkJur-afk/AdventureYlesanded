@@ -38,3 +38,27 @@ UNIQUE NONCLUSTERED (City);
 CREATE UNIQUE INDEX IX_tblEmployee_City
 ON DimEmployee(City)
 WITH IGNORE_DUP_KEY;
+
+
+-- 38. Indeksi plussid ja miinused
+
+-- Loome mitte-klastreeritud indeksi Salary veerule kasvavas järjekorras
+Create NonClustered Index IX_DimEmployee_Salary
+on DimEmployee (Salary Asc)
+
+-- SELECT päring, mis kasutab Salary indeksit palkade leidmiseks vahemikus 4000 kuni 8000
+Select * from DimEmployee where Salary > 4000 and Salary < 8000
+
+-- DELETE päring, kustutame read, kus Salary on 2500 (indeks aitab kiiremini rida leida)
+Delete from DimEmployee where Salary=2500
+
+-- UPDATE päring, uuendame Salary väärtust (süntaks võib vajada täpsustamist)
+Update DimEmployee Set Salary where Salary=7500
+
+-- SELECT päring, mis tagastab kõik read sorteerituna Salary järgi kahanevas järjekorras (kasutab indeksit sorteerimiseks)
+Select * from DimEmployee order by Salary Desc
+
+-- GROUP BY päring, mis rühmitab töötajad palkade järgi ja loendab iga palga esinemiste arvu
+Select Salary, Count(Salary) as Total
+from DimEmployee
+Group By Salary
