@@ -10,3 +10,12 @@ AS
 BEGIN
     -- Triggeri tegevuste kood
 END
+
+-- Alljärgnev trigger aktiveerub CREATE_TABLE DDL sündmuse korral: sp_rename
+CREATE TRIGGER FirstTrigger
+ON Database
+FOR CREATE_TABLE
+AS
+BEGIN
+    PRINT 'Uus tabel on loodud'
+END
