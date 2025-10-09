@@ -81,3 +81,12 @@ BEGIN
 ROLLBACK
 PRINT 'Tabelite loomine, muutmine ja kustutamine SQL Serveri ulatuses on keelatud'
 END
+
+-- Kuidas keelata serveri tasandi DDL-trigger
+DISABLE TRIGGER tr_ServerScopeTrigger ON ALL SERVER
+
+-- Kuidas aktiveerida serveri tasandi DDL-trigger
+ENABLE TRIGGER tr_ServerScopeTrigger ON ALL SERVER
+
+-- Kuidas eemaldada serveri tasandi DDL-trigger
+DROP TRIGGER tr_ServerScopeTrigger ON ALL SERVER
