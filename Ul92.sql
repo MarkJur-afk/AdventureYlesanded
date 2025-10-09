@@ -31,3 +31,13 @@ AS
 BEGIN
     PRINT 'Tabel on loodud, muudetud või kustutatud'
 END
+
+-- Järgmiseks näide, kuidas piirata kasutajate õigusi tabelite loomisel, muutmisel ja kustutamisel, kasutades triggerit
+ALTER TRIGGER FirstTrigger
+ON Database
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+    ROLLBACK
+    PRINT 'Tabelite loomine, muutmine ja kustutamine ei ole lubatud'
+END
