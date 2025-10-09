@@ -28,3 +28,12 @@ Insert into TableB values (6, 'Pam', 'Female')
 Insert into TableB values (7, 'Rebeka', 'Female')
 Insert into TableB values (8, 'Jordan', 'Male')
 Go
+
+
+-- Kuvab kirjed, mis esinevad ainult TableA-s, aga mitte TableB-s
+Select Id, Name, Gender  
+From TableA  
+Except  
+Select Id, Name, Gender  
+From TableB
+
