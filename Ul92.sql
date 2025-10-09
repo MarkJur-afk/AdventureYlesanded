@@ -41,3 +41,20 @@ BEGIN
     ROLLBACK
     PRINT 'Tabelite loomine, muutmine ja kustutamine ei ole lubatud'
 END
+
+
+-- Triggeri keelamine
+DISABLE TRIGGER FirstTrigger ON DATABASE;
+
+-- Triggeri eemaldamine
+DROP TRIGGER FirstTrigger ON DATABASE;
+
+-- Trigger, mis käivitub, kui kasutatakse sp_rename käsku süsteemi salvestatud protseduuride ümbernimetamiseks
+CREATE TRIGGER RenameTable
+ON Database
+FOR RENAME
+AS
+BEGIN
+    ROLLBACK
+    PRINT 'Sa üritasid midagi ümber nimetada'
+END
