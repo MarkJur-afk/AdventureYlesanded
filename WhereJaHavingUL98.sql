@@ -12,3 +12,9 @@ SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales
 FROM DimProduct
 GROUP BY EnglishProductName
 HAVING SUM(SafetyStockLevel) > 800;
+
+-- Kui proovime WHERE klauslit kasutada HAVING asemel, tekib süntaksiviga
+SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales 
+FROM DimProduct
+GROUP BY EnglishProductName
+HAVING SUM(SafetyStockLevel) > 800;
