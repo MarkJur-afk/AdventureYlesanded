@@ -58,3 +58,15 @@ BEGIN
     ROLLBACK
     PRINT 'Sa üritasid midagi ümber nimetada'
 END
+
+
+-- DDL-triggerid, mis kehtivad ainult antud andmebaasile
+-- See trigger takistab tabelite loomist, muutmist või kustutamist selles andmebaasis
+CREATE TRIGGER tr_DatabaseScopeTrigger 
+ON Database
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+ROLLBACK
+PRINT 'Tabelite loomine, muutmine ja kustutamine selles andmebaasis pole lubatud'
+END
