@@ -37,3 +37,13 @@ Except
 Select Id, Name, Gender  
 From TableB
 
+-- DimEmployee tabeli näide:
+-- Valib töötajad, kelle palk jääb vahemikku 50 000 kuni 59 999
+Select EmployeeKey, FirstName, Gender, Salary  
+From DimEmployee  
+Where Salary >= 50000  
+Except  
+Select EmployeeKey, FirstName, Gender, Salary  
+From DimEmployee  
+Where Salary >= 60000  
+Order By FirstName
