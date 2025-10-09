@@ -19,3 +19,15 @@ AS
 BEGIN
     PRINT 'Uus tabel on loodud'
 END
+
+-- Kui käivitad selle käsu, aktiveerub trigger ja kuvab sõnumi: uus tabel on lisatud
+CREATE TABLE test (id INT);
+
+-- Kui soovid, et trigger reageeriks mitmele sündmusele, näiteks tabeli loomisele, muutmisele ja kustutamisele, siis eralda sündmused komadega
+ALTER TRIGGER FirstTrigger
+ON Database
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+    PRINT 'Tabel on loodud, muudetud või kustutatud'
+END
