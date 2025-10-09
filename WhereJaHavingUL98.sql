@@ -24,3 +24,9 @@ SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales
 FROM DimProduct
 WHERE EnglishProductName IN ('Chain', 'Front Brakes')
 GROUP BY EnglishProductName;
+
+-- Sarnane päring, mis kasutab HAVING klauslit valiku piiramiseks kindlatele toodetele
+SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales 
+FROM DimProduct
+GROUP BY EnglishProductName
+HAVING EnglishProductName IN ('Chain', 'Front Brakes');
