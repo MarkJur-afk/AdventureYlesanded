@@ -1,6 +1,8 @@
-Index
-<img width="408" height="380" alt="{36F94516-C38B-4AD7-8AA4-A0F4CA217E38}" src="https://github.com/user-attachments/assets/048b4f17-d494-4de4-a023-ccc738852afb" />
+Procedure, Funktsioonid, Triggerid
+<img width="274" height="359" alt="{BE5A3DA0-DBE9-4AD4-BDBA-25E2A3CF3819}" src="https://github.com/user-attachments/assets/165ac142-b852-413f-8eed-c29308f1d59f" />
 
-Funktsioonid
-<img width="488" height="846" alt="{D0AD4646-8B09-4D8C-9A5B-73075375CFCF}" src="https://github.com/user-attachments/assets/6c4efb21-12dd-45a7-913a-d7425b07d453" />
+Indexid
+<img width="613" height="109" alt="{F58E65A6-664E-4F7A-9323-BB429D439923}" src="https://github.com/user-attachments/assets/3de51c4c-c12d-4dfc-9618-8b004668b142" />
 
+Views
+<img width="272" height="255" alt="{8B44DC3B-39E6-4AAA-9369-45E7BFD0330D}" src="https://github.com/user-attachments/assets/ccc3e161-fd18-4534-8aeb-0a791bc56618" />
