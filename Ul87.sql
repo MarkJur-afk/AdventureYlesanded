@@ -47,3 +47,23 @@ Select EmployeeKey, FirstName, Gender, Salary
 From DimEmployee  
 Where Salary >= 60000  
 Order By FirstName
+
+-- 88. Erinevus EXCEPT ja NOT IN operaatoril
+
+
+-- Kuvab kirjed, mis eksisteerivad TableA-s, kuid puuduvad TableB-s
+select Id, Name, Gender 
+from TableA
+except
+select Id, Name, Gender 
+from TableB
+
+-- Võrdne tulemus kasutades NOT IN operaatorit
+select Id, Name, Gender 
+from TableA
+where id NOT IN (select id from TableB)
+
+-- See päring ebaõnnestub, kuna alam-päring tagastab rohkem kui ühe veeru
+select Id, Name, Gender 
+from TableA
+where id NOT IN (select id, Name from TableB)
