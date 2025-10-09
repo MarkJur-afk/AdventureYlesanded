@@ -70,3 +70,14 @@ BEGIN
 ROLLBACK
 PRINT 'Tabelite loomine, muutmine ja kustutamine selles andmebaasis pole lubatud'
 END
+
+-- Serveri ulatuses DDL-triggeri loomine
+-- Sarnane andmebaasi tasandi triggerile, aga rakendub kogu SQL Serveri tasandil ning nõuab märksõna ALL SERVER
+CREATE TRIGGER tr_ServerScopeTrigger
+ON ALL SERVER
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+ROLLBACK
+PRINT 'Tabelite loomine, muutmine ja kustutamine SQL Serveri ulatuses on keelatud'
+END
