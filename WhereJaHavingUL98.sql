@@ -18,3 +18,9 @@ SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales
 FROM DimProduct
 GROUP BY EnglishProductName
 HAVING SUM(SafetyStockLevel) > 800;
+
+-- Näide, kus valime ainult kindlad tooted ('Chain' ja 'Front Brakes') ning arvutame nende müügikoguse
+SELECT EnglishProductName, SUM(SafetyStockLevel) AS TotalSales 
+FROM DimProduct
+WHERE EnglishProductName IN ('Chain', 'Front Brakes')
+GROUP BY EnglishProductName;
